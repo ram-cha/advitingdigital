@@ -6,6 +6,7 @@
     <title>3D Flow Index Page</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
+        html { scroll-behavior: smooth; } /* Added for smooth scrolling */
         body { margin: 0; font-family: sans-serif; }
         #canvas-container {
             width: 100%;
@@ -16,13 +17,47 @@
             z-index: -1; /* Place it behind other content */
         }
         header, main, footer {
-            padding: 20px;
+            /* padding: 20px; */ /* Padding will be applied to header/footer directly, and sections for main */
             position: relative; /* Ensure they are above the canvas */
             z-index: 1;
         }
-        header { background-color: rgba(255, 255, 255, 0.8); text-align: center; }
-        main { min-height: 100vh; background-color: rgba(255, 255, 255, 0.7); } /* Ensure scrollability to see flow effects */
-        footer { background-color: rgba(50, 50, 50, 0.8); color: white; text-align: center; }
+        header { 
+            background-color: rgba(245, 245, 245, 0.85); /* Slightly off-white, more opaque */
+            text-align: center; 
+            padding: 25px 20px; /* Adjusted padding */
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        main { 
+            min-height: 100vh; 
+            /* background-color removed from main, will be on sections */
+            padding-top: 20px; /* Add some space before the first section if header is fixed or transparent */
+            padding-bottom: 20px; /* Add some space after the last section before footer */
+        }
+        main section { /* Styling for each content section */
+            background-color: rgba(255, 255, 255, 0.88); /* More opaque for readability */
+            padding: 30px 40px; /* Generous padding inside sections */
+            min-height: 70vh;   /* Ensure sections have substantial height */
+            color: #333;       /* Default dark text color for sections */
+            margin-left: auto;  /* Centering the section content block */
+            margin-right: auto;
+            margin-bottom: 30px;/* Space between sections */
+            max-width: 960px;   /* Max width for content readability */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Softer shadow for definition */
+            border-radius: 8px; /* Optional: rounded corners for sections */
+        }
+        main section h2 {
+            text-align: center;
+            color: #111; /* Darker color for headings */
+            margin-bottom: 25px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Very subtle shadow for pop */
+        }
+        footer { 
+            background-color: rgba(40, 40, 40, 0.9); /* Darker footer */
+            color: white; 
+            text-align: center; 
+            padding: 30px 20px; /* Adjusted padding */
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
     </style>
 </head>
 <body>
@@ -59,6 +94,26 @@
         <section id="about">
             <h2>About Section</h2>
             <p>More content to demonstrate scrolling over the 3D canvas.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            <p>Cras venenatis euismod malesuada. Nullam ac erat ante. Vivamus sed massa et eros tincidunt varius.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services Section</h2>
+            <p>This is the services section. We offer a variety of solutions to meet your needs.</p>
+            <p>Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+            <p>Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada.</p>
+            <p>Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Section</h2>
+            <p>Get in touch with us! We would love to hear from you.</p>
+            <p>Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus.</p>
+            <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh.</p>
+            <p>Donec sollicitudin molestie malesuada. Cras ultricies ligula sed magna dictum porta.</p>
+            <p>Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
         </section>
     </main>
 
